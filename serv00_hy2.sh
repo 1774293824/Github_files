@@ -8,7 +8,7 @@ mkdir -p "$WORK_DIR" && cd "$WORK_DIR"
 
 # 下载并解压缩文件
 echo "下载 s-box.zip..."
-wget -O 's-box.zip' 'https://raw.githubusercontent.com/1774293824/Actions-public/main/s-box.zip' && unzip s-box.zip
+wget -O 's-box.zip' 'https://raw.githubusercontent.com/1774293824/BPB_worker/main/s-box.zip' && unzip s-box.zip
 
 # 获取用户输入的函数
 prompt_for_input() {
