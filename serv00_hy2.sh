@@ -26,7 +26,7 @@ PORT2=$(prompt_for_input "请输入 tuic的udp端口号" '12225')
 CONFIG_FILE="config.json"
 if [ -f "$CONFIG_FILE" ]; then
     echo "替换配置文件中的占位符..."
-    sed -i '' "s/{{IP}}/$IP/g; s/33333/$PORT1/g; s/44444/$PORT2/g" "$CONFIG_FILE"
+    sed -i '' "s/{{IP}}/$IP/g; s/33333/$PORT1/g" "$CONFIG_FILE"
 else
     echo "配置文件 $CONFIG_FILE 不存在！"
     exit 1
@@ -41,6 +41,4 @@ screen -dmS box /home/${USERNAME}/sing-box/sb run
 echo "启动服务: successful\n服务已成功启动。要重新附加到屏幕会话，请使用：screen -r box\n请测试下面的订阅:"
 echo ""
 echo -e "\033[0;32m hysteria2://$UUID@$IP:$PORT1/?sni=www.bing.com&alpn=h3&insecure=1#${USERNAME} \033[0m"
-echo ""
-echo -e "\033[0;32m tuic://$UUID:password123@$IP:$PORT2?sni=www.bing.com&alpn=h3&congestion_control=bbr#${USERNAME} \033[0m"
 echo ""
