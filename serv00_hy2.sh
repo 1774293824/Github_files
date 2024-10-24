@@ -1,6 +1,6 @@
 #!/bin/sh
 set -e
-export UUID=${UUID:-'a03e977f-6491-42a2-b56d-abbab6c3a9ac'} 
+export UUID=${UUID:-'a03e977f-6491-42a2-b56d-abbab6c3a9ac'}
 USERNAME=$(whoami)
 
 WORK_DIR="./sing-box"
@@ -14,20 +14,32 @@ wget -O 's-box.zip' 'https://raw.githubusercontent.com/1774293824/BPB_worker/mai
 prompt_for_input() {
     local prompt_msg=$1
     local default_value=$2
-    read -p "$(echo -e '\033[0;32m'"$prompt_msg"' (默认 '"$default_value"'): \033[0m')" input
+    read -p "$(echo -e '\033[0;32m'"$prompt_msg"' \033[0m')" input
     echo "${input:-$default_value}"
 }
 
-IP=$(prompt_for_input "请输入 IP地址" '128.204.223.118')
-PORT1=$(prompt_for_input "请输入 hysteria2的udp端口号" '21382')
+IP=$(prompt_for_input "请输入 IP地址: " "{{IP}}")
+PORT1=$(prompt_for_input "输入 hysteria2的udp端口号: " "33333")
 
-# 替换配置文件中的占位符
-CONFIG_FILE="config.json"
-if [ -f "$CONFIG_FILE" ]; then
+# 配置文件备份路径
+BACKUP_CONFIG_FILE="config_backup.json"
+NEW_CONFIG_FILE="config.json"
+
+# 删除旧的 config.json 文件
+if [ -f "$NEW_CONFIG_FILE" ]; then
+    echo "删除旧的 $NEW_CONFIG_FILE 文件..."
+    rm -f "$NEW_CONFIG_FILE"  # 删除旧的 config.json 文件
+fi
+
+# 检查备份配置文件是否存在
+if [ -f "$BACKUP_CONFIG_FILE" ]; then
+    echo "复制 $BACKUP_CONFIG_FILE 为 $NEW_CONFIG_FILE..."
+    cp "$BACKUP_CONFIG_FILE" "$NEW_CONFIG_FILE"  # 从备份文件复制新文件
+
     echo "替换配置文件中的占位符..."
-    sed -i '' "s/{{IP}}/$IP/g; s/33333/$PORT1/g" "$CONFIG_FILE"
+    sed -i '' "s/{{IP}}/$IP/g; s/33333/$PORT1/g" "$NEW_CONFIG_FILE"  # 替换新配置文件中的占位符
 else
-    echo "配置文件 $CONFIG_FILE 不存在！"
+    echo "配置文件 $BACKUP_CONFIG_FILE 不存在！"
     exit 1
 fi
 
