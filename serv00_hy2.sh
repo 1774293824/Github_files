@@ -21,11 +21,11 @@ prompt_for_input() {
 IP_1=$(prompt_for_input "请输入第一个IP地址: " "{{IP_1}}")
 PORT_1=$(prompt_for_input "输入第一个udp端口号: " "33333")
 
-IP_2=$(prompt_for_input "请输入第一个IP地址: " "{{IP_2}}")
-PORT_2=$(prompt_for_input "输入第一个udp端口号: " "44444")
+IP_2=$(prompt_for_input "请输入第二个IP地址: " "{{IP_2}}")
+PORT_2=$(prompt_for_input "输入第二个udp端口号: " "44444")
 
-IP_3=$(prompt_for_input "请输入第一个IP地址: " "{{IP_3}}")
-PORT_3=$(prompt_for_input "输入第一个udp端口号: " "55555")
+IP_3=$(prompt_for_input "请输入第三个IP地址: " "{{IP_3}}")
+PORT_3=$(prompt_for_input "输入第三个udp端口号: " "55555")
 
 # 配置文件备份路径
 BACKUP_CONFIG_FILE="config_backup.json"
