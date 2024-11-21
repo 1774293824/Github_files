@@ -19,9 +19,9 @@ prompt_for_input() {
 }
 PORT1=$(prompt_for_input "输入配置的第一个udp端口号: " "33333")
 IP_1=$(prompt_for_input "请输入第 1 个IP地址: " "{{IP_1}}")
-PORT2=$(prompt_for_input "输入配置的第一个udp端口号: " "44444")
+PORT2=$(prompt_for_input "输入配置的第二个udp端口号: " "44444")
 IP_2=$(prompt_for_input "请输入第 2 个IP地址: " "{{IP_2}}")
-PORT3=$(prompt_for_input "输入配置的第一个udp端口号: " "55555")
+PORT3=$(prompt_for_input "输入配置的第三个udp端口号: " "55555")
 IP_3=$(prompt_for_input "请输入第 3 个IP地址: " "{{IP_3}}")
 
 # 配置文件备份路径
