@@ -9,7 +9,10 @@ screen -dmS box /home/$(whoami)/sing-box/sb run
 ```
 # 老王项目：下载singbox
 下载地址
-```https://github.com/eooce/test/releases/tag/freebsd```
+```
+https://github.com/eooce/test/releases/tag/freebsd
+```
+下载说明：在上面的地址中下载sb文件，再配合cert.pem文件和private.key文件，即可实现运行sing-box
 
 # 延迟测试链接
 
