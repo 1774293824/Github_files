@@ -10,10 +10,10 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@main
 
-    - name: 上传固件到release2
+    - name: 上传固件到release
       uses: softprops/action-gh-release@v2
       with:
         tag_name: "backup_files"
-        files: "./mihomo-linux-arm64-v1.18.10.gz"
-        token: ${{ secrets.GITHUB_TOKEN }}
-
+        files: "./redis-desktop-manager-0.9.3.817.exe"  # 确保文件路径正确
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
