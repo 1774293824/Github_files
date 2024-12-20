@@ -10,10 +10,10 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@main
 
-    - name: 上传固件到release
+    - name: 上传固件到release2
       uses: softprops/action-gh-release@v2
       with:
         tag_name: "backup_files"
-        files: "./mihomo-linux-arm64-v1.18.10.gz"  # 确保文件路径正确
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        files: "./mihomo-linux-arm64-v1.18.10.gz"
+        token: ${{ secrets.GH_TOKEN }}  # 使用你创建的PAT
+
