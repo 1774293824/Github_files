@@ -15,5 +15,5 @@ jobs:
       with:
         tag_name: "backup_files"
         files: "./mihomo-linux-arm64-v1.18.10.gz"
-        token: ${{ secrets.GH_TOKEN }}  # 使用你创建的PAT
+        token: ${{ secrets.GITHUB_TOKEN }}
 
