@@ -7,11 +7,14 @@ WORK_DIR="./sing-box"
 mkdir -p "$WORK_DIR" && cd "$WORK_DIR"
 
 # 下载并解压缩文件
-echo "下载源文件"
-wget -q 'https://github.com/1774293824/Github_files/releases/download/serv00/sb'
-wget -q 'https://github.com/1774293824/Github_files/releases/download/serv00/cert.pem'
+wget -q 'https://raw.githubusercontent.com/1774293824/Github_files/main/config_copy.json'
+echo "开始下载源文件，进度：10%"
 wget -q 'https://github.com/1774293824/Github_files/releases/download/serv00/private.key'
-wget -q 'https://github.com/1774293824/Github_files/releases/download/serv00/config_copy.json'
+echo "开始下载源文件，进度：30%"
+wget -q 'https://github.com/1774293824/Github_files/releases/download/serv00/sb'
+echo "开始下载源文件，进度：90%"
+wget -q 'https://github.com/1774293824/Github_files/releases/download/serv00/cert.pem'
+echo "下载完成"
 
 # 获取用户输入的函数
 prompt_for_input() {
