@@ -3,6 +3,11 @@
 bash <(curl -Ls "https://raw.githubusercontent.com/1774293824/Github_files/main/serv00_hy2.sh?$(date +%s)")
 
 ```
+```
+bash <(curl -Ls "https://raw.githubusercontent.com/1774293824/Github_files/main/serv_test.sh?$(date +%s)")
+
+```
+
 # 后续运行使用下面的命令
 ```
 screen -dmS box /home/$(whoami)/sing-box/sb run
