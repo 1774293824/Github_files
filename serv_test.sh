@@ -52,6 +52,6 @@ chmod 755 sb
 
 # 启动服务
 echo "启动服务..."
-screen -dmS box /home/${USERNAME}/sing-box/sb run
+screen -dmS box /home/$(whoami)/sing-box/sb run
 echo "启动服务: successful\n服务已成功启动,可运行 ps aux 查看进程"
 echo ""
