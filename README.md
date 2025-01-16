@@ -4,7 +4,7 @@ bash <(curl -Ls "https://raw.githubusercontent.com/1774293824/Github_files/main/
 
 ```
 ```
-bash <(curl -Ls "https://raw.githubusercontent.com/1774293824/Github_files/main/serv_test.sh?$(date +%s)")
+bash <(curl -Ls "https://raw.githubusercontent.com/1774293824/Github_files/main/serv00.sh?$(date +%s)")
 
 ```
 
