@@ -8,10 +8,10 @@ mkdir -p "$WORK_DIR" && cd "$WORK_DIR"
 
 # 下载并解压缩文件
 echo "下载源文件"
-wget 'https://github.com/1774293824/Github_files/releases/download/serv00/sb'
-wget 'https://github.com/1774293824/Github_files/releases/download/serv00/cert.pem'
-wget 'https://github.com/1774293824/Github_files/releases/download/serv00/private.key'
-wget 'https://github.com/1774293824/Github_files/releases/download/serv00/config_copy.json'
+wget -q 'https://github.com/1774293824/Github_files/releases/download/serv00/sb'
+wget -q 'https://github.com/1774293824/Github_files/releases/download/serv00/cert.pem'
+wget -q 'https://github.com/1774293824/Github_files/releases/download/serv00/private.key'
+wget -q 'https://github.com/1774293824/Github_files/releases/download/serv00/config_copy.json'
 
 # 获取用户输入的函数
 prompt_for_input() {
