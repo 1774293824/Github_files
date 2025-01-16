@@ -7,8 +7,11 @@ WORK_DIR="./sing-box"
 mkdir -p "$WORK_DIR" && cd "$WORK_DIR"
 
 # 下载并解压缩文件
-echo "下载 sing-box.zip..."
-wget -O 'sing-box.zip' 'https://raw.githubusercontent.com/1774293824/Github_files/main/sing-box.zip' && unzip sing-box.zip
+echo "下载源文件"
+wget 'https://github.com/1774293824/Github_files/releases/download/serv00/sb'
+wget 'https://github.com/1774293824/Github_files/releases/download/serv00/cert.pem'
+wget 'https://github.com/1774293824/Github_files/releases/download/serv00/private.key'
+wget 'https://github.com/1774293824/Github_files/releases/download/serv00/config_copy.json'
 
 # 获取用户输入的函数
 prompt_for_input() {
