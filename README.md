@@ -7,6 +7,10 @@ bash <(curl -Ls "https://raw.githubusercontent.com/1774293824/Github_files/main/
 bash <(curl -Ls "https://raw.githubusercontent.com/1774293824/Github_files/main/serv00.sh?$(date +%s)")
 
 ```
+```
+bash <(curl -Ls "https://raw.githubusercontent.com/1774293824/Github_files/main/serv00_vless.sh?$(date +%s)")
+
+```
 
 # 后续运行使用下面的命令
 ```
