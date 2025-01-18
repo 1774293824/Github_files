@@ -1,8 +1,6 @@
 # 首次安装完成后，后续使用下面的命令，可运行vless和sing-box
-```
-screen -dmS vless node /home/$(whoami)/vless/app.js
-screen -dmS box /home/$(whoami)/sing-box/sb run
-```
+```screen -dmS vless node /home/$(whoami)/vless/app.js```
+```screen -dmS box /home/$(whoami)/sing-box/sb run```
 # serv00一键安装运行sing-box
 安装hysteria2 + tuic5
 ```
