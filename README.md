@@ -18,11 +18,11 @@ bash <(curl -Ls "https://raw.githubusercontent.com/1774293824/Github_files/main/
 bash <(curl -Ls "https://raw.githubusercontent.com/1774293824/Github_files/main/serv00_vless.sh?$(date +%s)")
 ```
 # 老王项目：下载singbox
+下载说明：在上面的地址中下载 sb 文件，再配合cert.pem文件和private.key文件，即可实现运行sing-box
 下载地址
 ```
 https://github.com/eooce/test/releases/tag/freebsd
 ```
-下载说明：在上面的地址中下载 #sb 文件，再配合cert.pem文件和private.key文件，即可实现运行sing-box
 
 # 延迟测试链接
 
