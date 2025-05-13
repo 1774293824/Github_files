@@ -8,12 +8,13 @@ mkdir -p "$WORK_DIR" && cd "$WORK_DIR"
 
 # 下载并解压缩文件
 wget -q 'https://raw.githubusercontent.com/1774293824/Github_files/main/config_copy.json'
-echo "开始下载源文件，进度：10%"
+echo "下载源文件'config_copy.json', done"
 wget -q 'https://github.com/1774293824/Github_files/releases/download/serv00/private.key'
-echo "开始下载源文件，进度：30%"
-wget -q 'https://github.com/1774293824/Github_files/releases/download/serv00/sb'
-echo "开始下载源文件，进度：90%"
+echo "下载源文件'private.key', done"
 wget -q 'https://github.com/1774293824/Github_files/releases/download/serv00/cert.pem'
+echo "下载源文件'cert.pem', done"
+wget -q 'https://github.com/1774293824/Github_files/releases/download/serv00/sb'
+echo "下载源文件'sb', done"
 echo "下载完成"
 
 # 获取用户输入的函数
