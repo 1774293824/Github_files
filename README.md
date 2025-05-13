@@ -6,10 +6,6 @@ screen -dmS vless node /home/$(whoami)/vless/app.js
 screen -dmS box /home/$(whoami)/sing-box/sb run
 ```
 # serv00一键安装运行sing-box
-安装hysteria2 + tuic5
-```
-bash <(curl -Ls "https://raw.githubusercontent.com/1774293824/Github_files/main/serv00_hy2.sh?$(date +%s)")
-```
 ```
 bash <(curl -Ls "https://raw.githubusercontent.com/1774293824/Github_files/main/serv00.sh?$(date +%s)")
 ```
