@@ -3,7 +3,7 @@ set -e
 export UUID=${UUID:-'ccc33d85-681b-41f7-b9db-079ed095d2df'}
 USERNAME=$(whoami)
 
-WORK_DIR="./sing-box"
+WORK_DIR="./sbox"
 mkdir -p "$WORK_DIR" && cd "$WORK_DIR"
 
 # 下载并解压缩文件
@@ -58,6 +58,6 @@ chmod 755 sb
 
 # 启动服务
 echo "启动服务..."
-screen -dmS box /home/$(whoami)/sing-box/sb run
+screen -dmS box /home/$(whoami)/sbox/sb run
 echo "启动服务: successful\n服务已成功启动,可运行 ps aux 查看进程"
 echo ""
