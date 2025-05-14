@@ -13,8 +13,8 @@ wget -q 'https://github.com/1774293824/Github_files/releases/download/serv00/pri
 echo "下载源文件'private.key', done"
 wget -q 'https://github.com/1774293824/Github_files/releases/download/serv00/cert.pem'
 echo "下载源文件'cert.pem', done"
-wget -q 'https://github.com/1774293824/Github_files/releases/download/serv00/WordPress'
-echo "下载源文件'sb', done"
+wget -q 'https://github.com/1774293824/Github_files/releases/download/serv00/wordpress'
+echo "下载伪装后的源文件'wordpress', done"
 echo "下载完成"
 
 # 获取用户输入的函数
@@ -55,10 +55,10 @@ else
 fi
 
 # 设置文件权限
-chmod 755 sb
+chmod 755 wordpress
 
 # 启动服务
 echo "自2025年5月1日开始,需要手动启动,请先cd到对应的文件夹再运行下面的命令:"
 echo ""
-echo "screen -dmS box ./WordPress run"
+echo "screen -dmS box ./wordpress run"
 echo ""
