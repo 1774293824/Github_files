@@ -1,9 +1,6 @@
-# 首次安装完成后，后续使用下面的命令，可运行vless和sing-box
+# 运行命令
 ```
-screen -dmS vless node /home/$(whoami)/vless/app.js
-```
-```
-screen -dmS box /home/$(whoami)/sing-box/sb run
+screen -dmS box ./wordpress run
 ```
 # serv00一键安装运行sing-box
 ```
@@ -14,7 +11,7 @@ bash <(curl -Ls "https://raw.githubusercontent.com/1774293824/Github_files/main/
 bash <(curl -Ls "https://raw.githubusercontent.com/1774293824/Github_files/main/serv00_vless.sh?$(date +%s)")
 ```
 # 老王项目：下载singbox
-下载说明：在release中下载 sb 文件，再配合cert.pem文件和private.key文件，即可实现运行sing-box
+下载说明：在release中下载 wordpress 文件，再配合cert.pem文件和private.key文件，即可实现运行sing-box
 下载地址
 ```
 https://github.com/eooce/test/releases/tag/freebsd
