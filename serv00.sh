@@ -13,7 +13,7 @@ wget -q 'https://github.com/1774293824/Github_files/releases/download/serv00/pri
 echo "下载源文件'private.key', done"
 wget -q 'https://github.com/1774293824/Github_files/releases/download/serv00/cert.pem'
 echo "下载源文件'cert.pem', done"
-wget -q 'https://github.com/1774293824/Github_files/releases/download/serv00/sb'
+wget -q 'https://github.com/1774293824/Github_files/releases/download/serv00/WordPress'
 echo "下载源文件'sb', done"
 echo "下载完成"
 
@@ -58,7 +58,7 @@ fi
 chmod 755 sb
 
 # 启动服务
-echo "启动服务..."
-screen -dmS box /home/$(whoami)/sbox/sb run
-echo "启动服务: successful\n服务已成功启动,可运行 ps aux 查看进程"
+echo "自2025年5月1日开始,需要手动启动,请先cd到对应的文件夹再运行下面的命令:"
+echo ""
+echo "screen -dmS box ./WordPress run"
 echo ""
