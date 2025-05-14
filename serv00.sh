@@ -3,8 +3,8 @@ set -e
 export UUID=${UUID:-'ccc33d85-681b-41f7-b9db-079ed095d2df'}
 USERNAME=$(whoami)
 
-WORK_DIR="./sbox"
-mkdir -p "$WORK_DIR" && cd "$WORK_DIR"
+# WORK_DIR="./sbox"
+# mkdir -p "$WORK_DIR" && cd "$WORK_DIR"
 
 # 下载并解压缩文件
 wget -q 'https://raw.githubusercontent.com/1774293824/Github_files/main/config_copy.json'
