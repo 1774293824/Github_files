@@ -1,0 +1,21 @@
+payload:
+# Telegram
+  - IP-CIDR,91.108.0.0/16,no-resolve
+  - IP-CIDR,149.154.160.0/20,no-resolve
+  - IP-CIDR,95.161.64.0/20,no-resolve
+  - IP-CIDR,91.105.192.0/23,no-resolve
+  - IP-CIDR,185.76.151.0/24,no-resolve
+  - DOMAIN-SUFFIX,t.me
+  - DOMAIN-SUFFIX,telegram.org
+  - DOMAIN-SUFFIX,tdesktop.com
+  - DOMAIN-SUFFIX,telegra.ph
+  - DOMAIN-SUFFIX,telegram.me
+  - DOMAIN-SUFFIX,telesco.pe
+# ChatGPT
+  - DOMAIN-SUFFIX,auth0.com
+  - DOMAIN-SUFFIX,openai.com
+  - DOMAIN-SUFFIX,chatgpt.com
+  - DOMAIN-SUFFIX,oaistatic.com
+  - DOMAIN-SUFFIX,azureedge.net
+  - DOMAIN-SUFFIX,oaiusercontent.com
+  - DOMAIN-SUFFIX,browser-intake-datadoghq.com
