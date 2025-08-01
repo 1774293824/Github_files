@@ -1,0 +1,56 @@
+proxy-groups:
+    - { name: '🚀 节点选择', type: select, proxies: ['🎁 自动选择', '🎁 故障转移', '剩余流量：87.17 GB', '距离下次重置剩余：20 天', 套餐到期：2025-08-03, 香港-1, 香港-2, 香港-3, 香港-4, 新加坡-1, 新加坡-2, 新加坡-3, 新加坡-4, 日本-1, 日本-2, 日本-3, 日本-4, 台湾-1, 台湾-2, 台湾-3, 台湾-4, 美国-1, 美国-2, 美国-3, 美国-4, 'Trojan-香港1 | 低倍率', 'Trojan-新加坡1 | 低倍率', 'Trojan-日本1 | 低倍率', 'Trojan-美国1 | 低倍率', 'Trojan-台湾1 | 低倍率', 'Trojan-加拿大1 | 低倍率', 'Trojan-香港2 | 低倍率', 'Trojan-新加坡2 | 低倍率', 'Trojan-日本2 | 低倍率', 'Trojan-美国2 | 低倍率', 'Trojan-台湾2 | 低倍率', 'Trojan-加拿大2 | 低倍率'] }
+    - { name: '🎁 自动选择', type: url-test, proxies: ['剩余流量：87.17 GB', '距离下次重置剩余：20 天', 套餐到期：2025-08-03, 香港-1, 香港-2, 香港-3, 香港-4, 新加坡-1, 新加坡-2, 新加坡-3, 新加坡-4, 日本-1, 日本-2, 日本-3, 日本-4, 台湾-1, 台湾-2, 台湾-3, 台湾-4, 美国-1, 美国-2, 美国-3, 美国-4, 'Trojan-香港1 | 低倍率', 'Trojan-新加坡1 | 低倍率', 'Trojan-日本1 | 低倍率', 'Trojan-美国1 | 低倍率', 'Trojan-台湾1 | 低倍率', 'Trojan-加拿大1 | 低倍率', 'Trojan-香港2 | 低倍率', 'Trojan-新加坡2 | 低倍率', 'Trojan-日本2 | 低倍率', 'Trojan-美国2 | 低倍率', 'Trojan-台湾2 | 低倍率', 'Trojan-加拿大2 | 低倍率'], url: 'https://www.nvidia.com', interval: 86400, lazy: true }
+    - { name: '🎁 故障转移', type: fallback, proxies: ['剩余流量：87.17 GB', '距离下次重置剩余：20 天', 套餐到期：2025-08-03, 香港-1, 香港-2, 香港-3, 香港-4, 新加坡-1, 新加坡-2, 新加坡-3, 新加坡-4, 日本-1, 日本-2, 日本-3, 日本-4, 台湾-1, 台湾-2, 台湾-3, 台湾-4, 美国-1, 美国-2, 美国-3, 美国-4, 'Trojan-香港1 | 低倍率', 'Trojan-新加坡1 | 低倍率', 'Trojan-日本1 | 低倍率', 'Trojan-美国1 | 低倍率', 'Trojan-台湾1 | 低倍率', 'Trojan-加拿大1 | 低倍率', 'Trojan-香港2 | 低倍率', 'Trojan-新加坡2 | 低倍率', 'Trojan-日本2 | 低倍率', 'Trojan-美国2 | 低倍率', 'Trojan-台湾2 | 低倍率', 'Trojan-加拿大2 | 低倍率'], url: 'https://www.nvidia.com', interval: 7200 }
+    - { name: '🌍 国外媒体', type: select, proxies: ['🚀 节点选择', '剩余流量：87.17 GB', '距离下次重置剩余：20 天', 套餐到期：2025-08-03, 香港-1, 香港-2, 香港-3, 香港-4, 新加坡-1, 新加坡-2, 新加坡-3, 新加坡-4, 日本-1, 日本-2, 日本-3, 日本-4, 台湾-1, 台湾-2, 台湾-3, 台湾-4, 美国-1, 美国-2, 美国-3, 美国-4, 'Trojan-香港1 | 低倍率', 'Trojan-新加坡1 | 低倍率', 'Trojan-日本1 | 低倍率', 'Trojan-美国1 | 低倍率', 'Trojan-台湾1 | 低倍率', 'Trojan-加拿大1 | 低倍率', 'Trojan-香港2 | 低倍率', 'Trojan-新加坡2 | 低倍率', 'Trojan-日本2 | 低倍率', 'Trojan-美国2 | 低倍率', 'Trojan-台湾2 | 低倍率', 'Trojan-加拿大2 | 低倍率'] }
+    - { name: 'Ⓜ️ 微软服务', type: select, proxies: ['🎯 全球直连', '🚀 节点选择', '剩余流量：87.17 GB', '距离下次重置剩余：20 天', 套餐到期：2025-08-03, 香港-1, 香港-2, 香港-3, 香港-4, 新加坡-1, 新加坡-2, 新加坡-3, 新加坡-4, 日本-1, 日本-2, 日本-3, 日本-4, 台湾-1, 台湾-2, 台湾-3, 台湾-4, 美国-1, 美国-2, 美国-3, 美国-4, 'Trojan-香港1 | 低倍率', 'Trojan-新加坡1 | 低倍率', 'Trojan-日本1 | 低倍率', 'Trojan-美国1 | 低倍率', 'Trojan-台湾1 | 低倍率', 'Trojan-加拿大1 | 低倍率', 'Trojan-香港2 | 低倍率', 'Trojan-新加坡2 | 低倍率', 'Trojan-日本2 | 低倍率', 'Trojan-美国2 | 低倍率', 'Trojan-台湾2 | 低倍率', 'Trojan-加拿大2 | 低倍率'] }
+    - { name: '🍎 苹果服务', type: select, proxies: ['🎯 全球直连', '🚀 节点选择', '剩余流量：87.17 GB', '距离下次重置剩余：20 天', 套餐到期：2025-08-03, 香港-1, 香港-2, 香港-3, 香港-4, 新加坡-1, 新加坡-2, 新加坡-3, 新加坡-4, 日本-1, 日本-2, 日本-3, 日本-4, 台湾-1, 台湾-2, 台湾-3, 台湾-4, 美国-1, 美国-2, 美国-3, 美国-4, 'Trojan-香港1 | 低倍率', 'Trojan-新加坡1 | 低倍率', 'Trojan-日本1 | 低倍率', 'Trojan-美国1 | 低倍率', 'Trojan-台湾1 | 低倍率', 'Trojan-加拿大1 | 低倍率', 'Trojan-香港2 | 低倍率', 'Trojan-新加坡2 | 低倍率', 'Trojan-日本2 | 低倍率', 'Trojan-美国2 | 低倍率', 'Trojan-台湾2 | 低倍率', 'Trojan-加拿大2 | 低倍率'] }
+    - { name: '🍎 Apple TV', type: select, proxies: ['🎯 全球直连', '🚀 节点选择', '剩余流量：87.17 GB', '距离下次重置剩余：20 天', 套餐到期：2025-08-03, 香港-1, 香港-2, 香港-3, 香港-4, 新加坡-1, 新加坡-2, 新加坡-3, 新加坡-4, 日本-1, 日本-2, 日本-3, 日本-4, 台湾-1, 台湾-2, 台湾-3, 台湾-4, 美国-1, 美国-2, 美国-3, 美国-4, 'Trojan-香港1 | 低倍率', 'Trojan-新加坡1 | 低倍率', 'Trojan-日本1 | 低倍率', 'Trojan-美国1 | 低倍率', 'Trojan-台湾1 | 低倍率', 'Trojan-加拿大1 | 低倍率', 'Trojan-香港2 | 低倍率', 'Trojan-新加坡2 | 低倍率', 'Trojan-日本2 | 低倍率', 'Trojan-美国2 | 低倍率', 'Trojan-台湾2 | 低倍率', 'Trojan-加拿大2 | 低倍率'] }
+    - { name: '📢 谷歌FCM', type: select, proxies: ['🚀 节点选择', '🎯 全球直连', '剩余流量：87.17 GB', '距离下次重置剩余：20 天', 套餐到期：2025-08-03, 香港-1, 香港-2, 香港-3, 香港-4, 新加坡-1, 新加坡-2, 新加坡-3, 新加坡-4, 日本-1, 日本-2, 日本-3, 日本-4, 台湾-1, 台湾-2, 台湾-3, 台湾-4, 美国-1, 美国-2, 美国-3, 美国-4, 'Trojan-香港1 | 低倍率', 'Trojan-新加坡1 | 低倍率', 'Trojan-日本1 | 低倍率', 'Trojan-美国1 | 低倍率', 'Trojan-台湾1 | 低倍率', 'Trojan-加拿大1 | 低倍率', 'Trojan-香港2 | 低倍率', 'Trojan-新加坡2 | 低倍率', 'Trojan-日本2 | 低倍率', 'Trojan-美国2 | 低倍率', 'Trojan-台湾2 | 低倍率', 'Trojan-加拿大2 | 低倍率'] }
+    - { name: '🎯 全球直连', type: select, proxies: [DIRECT, '🚀 节点选择', '剩余流量：87.17 GB', '距离下次重置剩余：20 天', 套餐到期：2025-08-03, 香港-1, 香港-2, 香港-3, 香港-4, 新加坡-1, 新加坡-2, 新加坡-3, 新加坡-4, 日本-1, 日本-2, 日本-3, 日本-4, 台湾-1, 台湾-2, 台湾-3, 台湾-4, 美国-1, 美国-2, 美国-3, 美国-4, 'Trojan-香港1 | 低倍率', 'Trojan-新加坡1 | 低倍率', 'Trojan-日本1 | 低倍率', 'Trojan-美国1 | 低倍率', 'Trojan-台湾1 | 低倍率', 'Trojan-加拿大1 | 低倍率', 'Trojan-香港2 | 低倍率', 'Trojan-新加坡2 | 低倍率', 'Trojan-日本2 | 低倍率', 'Trojan-美国2 | 低倍率', 'Trojan-台湾2 | 低倍率', 'Trojan-加拿大2 | 低倍率'] }
+    - { name: '🍃 应用净化', type: select, proxies: [REJECT, DIRECT, '剩余流量：87.17 GB', '距离下次重置剩余：20 天', 套餐到期：2025-08-03, 香港-1, 香港-2, 香港-3, 香港-4, 新加坡-1, 新加坡-2, 新加坡-3, 新加坡-4, 日本-1, 日本-2, 日本-3, 日本-4, 台湾-1, 台湾-2, 台湾-3, 台湾-4, 美国-1, 美国-2, 美国-3, 美国-4, 'Trojan-香港1 | 低倍率', 'Trojan-新加坡1 | 低倍率', 'Trojan-日本1 | 低倍率', 'Trojan-美国1 | 低倍率', 'Trojan-台湾1 | 低倍率', 'Trojan-加拿大1 | 低倍率', 'Trojan-香港2 | 低倍率', 'Trojan-新加坡2 | 低倍率', 'Trojan-日本2 | 低倍率', 'Trojan-美国2 | 低倍率', 'Trojan-台湾2 | 低倍率', 'Trojan-加拿大2 | 低倍率'] }
+    - { name: '🐟 漏网之鱼', type: select, proxies: ['🚀 节点选择', '🎯 全球直连', '剩余流量：87.17 GB', '距离下次重置剩余：20 天', 套餐到期：2025-08-03, 香港-1, 香港-2, 香港-3, 香港-4, 新加坡-1, 新加坡-2, 新加坡-3, 新加坡-4, 日本-1, 日本-2, 日本-3, 日本-4, 台湾-1, 台湾-2, 台湾-3, 台湾-4, 美国-1, 美国-2, 美国-3, 美国-4, 'Trojan-香港1 | 低倍率', 'Trojan-新加坡1 | 低倍率', 'Trojan-日本1 | 低倍率', 'Trojan-美国1 | 低倍率', 'Trojan-台湾1 | 低倍率', 'Trojan-加拿大1 | 低倍率', 'Trojan-香港2 | 低倍率', 'Trojan-新加坡2 | 低倍率', 'Trojan-日本2 | 低倍率', 'Trojan-美国2 | 低倍率', 'Trojan-台湾2 | 低倍率', 'Trojan-加拿大2 | 低倍率'] }
+rules:
+    - 'IP-CIDR,18.163.33.248/32,DIRECT,no-resolve'
+    - 'IP-CIDR,120.198.71.222/32,DIRECT,no-resolve'
+    - 'IP-CIDR,36.141.40.21/32,DIRECT,no-resolve'
+    - 'IP-CIDR,14.215.40.194/32,DIRECT,no-resolve'
+    - 'DOMAIN,www.linghunyun.com,DIRECT'
+    - 'RULE-SET,ADD-DIRECT,🎯 全球直连'
+    - 'RULE-SET,LocalAreaNetwork,🎯 全球直连'
+    - 'RULE-SET,UnBan,🎯 全球直连'
+    - 'RULE-SET,BanProgramAD,🍃 应用净化'
+    - 'RULE-SET,GoogleFCM,📢 谷歌FCM'
+    - 'RULE-SET,GoogleCN,🎯 全球直连'
+    - 'RULE-SET,Microsoft,Ⓜ️ 微软服务'
+    - 'RULE-SET,Apple,🍎 苹果服务'
+    - 'RULE-SET,AppleTV,🍎 Apple TV'
+    - 'RULE-SET,ProxyMedia,🌍 国外媒体'
+    - 'RULE-SET,ProxyLite,🚀 节点选择'
+    - 'RULE-SET,ADD-Proxy,🚀 节点选择'
+    - 'RULE-SET,ChinaDomain,🎯 全球直连'
+    - 'RULE-SET,ChinaCompanyIp,🎯 全球直连'
+    - 'GEOIP,CN,🎯 全球直连'
+    - 'MATCH,🐟 漏网之鱼'
+rule-providers:
+    ADD-DIRECT: { type: http, behavior: classical, url: 'http://47.76.80.41:50001/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2hvbmdDY2hhby9HbG9iYWxNZWRpYS1DbGFzaFJ1bGUvcmVmcy9oZWFkcy9tYWluL0FERC1ESVJFQ1QubGlzdA', path: ./providers/rule-provider_ADD-DIRECT.yaml, interval: 86400 }
+    LocalAreaNetwork: { type: http, behavior: classical, url: 'http://47.76.80.41:50001/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvTG9jYWxBcmVhTmV0d29yay5saXN0', path: ./providers/rule-provider_LocalAreaNetwork.yaml, interval: 86400 }
+    UnBan: { type: http, behavior: classical, url: 'http://47.76.80.41:50001/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvVW5CYW4ubGlzdA', path: ./providers/rule-provider_UnBan.yaml, interval: 86400 }
+    BanProgramAD: { type: http, behavior: classical, url: 'http://47.76.80.41:50001/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvQmFuUHJvZ3JhbUFELmxpc3Q', path: ./providers/rule-provider_BanProgramAD.yaml, interval: 86400 }
+    
+    GoogleFCM: { type: http, behavior: classical, url: 'http://47.76.80.41:50001/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvUnVsZXNldC9Hb29nbGVGQ00ubGlzdA', path: ./providers/rule-provider_GoogleFCM.yaml, interval: 86400 }
+    GoogleCN: { type: http, behavior: classical, url: 'http://47.76.80.41:50001/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvR29vZ2xlQ04ubGlzdA', path: ./providers/rule-provider_GoogleCN.yaml, interval: 86400 }
+    
+    Microsoft: { type: http, behavior: classical, url: 'http://47.76.80.41:50001/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvTWljcm9zb2Z0Lmxpc3Q', path: ./providers/rule-provider_Microsoft.yaml, interval: 86400 }
+    Apple: { type: http, behavior: classical, url: 'http://47.76.80.41:50001/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvQXBwbGUubGlzdA', path: ./providers/rule-provider_Apple.yaml, interval: 86400 }
+    AppleTV: { type: http, behavior: classical, url: 'http://47.76.80.41:50001/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9yZWZzL2hlYWRzL21hc3Rlci9DbGFzaC9SdWxlc2V0L0FwcGxlVFYubGlzdA', path: ./providers/rule-provider_AppleTV.yaml, interval: 86400 }
+    ProxyMedia: { type: http, behavior: classical, url: 'http://47.76.80.41:50001/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvUHJveHlNZWRpYS5saXN0', path: ./providers/rule-provider_ProxyMedia.yaml, interval: 86400 }
+    
+    ProxyLite: { type: http, behavior: classical, url: 'http://47.76.80.41:50001/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvUHJveHlMaXRlLmxpc3Q', path: ./providers/rule-provider_ProxyLite.yaml, interval: 86400 }
+    ADD-Proxy: { type: http, behavior: classical, url: 'http://47.76.80.41:50001/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2hvbmdDY2hhby9HbG9iYWxNZWRpYS1DbGFzaFJ1bGUvcmVmcy9oZWFkcy9tYWluL0FERC1Qcm94eS5saXN0', path: ./providers/rule-provider_ADD-Proxy.yaml, interval: 86400 }
+    ChinaDomain: { type: http, behavior: classical, url: 'http://47.76.80.41:50001/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvQ2hpbmFEb21haW4ubGlzdA', path: ./providers/rule-provider_ChinaDomain.yaml, interval: 86400 }
+    ChinaCompanyIp: { type: http, behavior: classical, url: 'http://47.76.80.41:50001/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvQ2hpbmFDb21wYW55SXAubGlzdA', path: ./providers/rule-provider_ChinaCompanyIp.yaml, interval: 86400 }
+
+# 配置（规则）
+# 代理（全局）
+# 直连
