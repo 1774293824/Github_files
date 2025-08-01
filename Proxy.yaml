@@ -19,3 +19,58 @@ payload:
   - DOMAIN-SUFFIX,azureedge.net
   - DOMAIN-SUFFIX,oaiusercontent.com
   - DOMAIN-SUFFIX,browser-intake-datadoghq.com
+# HNM
+  - DOMAIN-SUFFIX,plyr.io
+  - DOMAIN-SUFFIX,jable.tv
+  - DOMAIN-SUFFIX,missav.ai
+  - DOMAIN-SUFFIX,sb-cd.com
+  - DOMAIN-SUFFIX,hanime1.com
+  - DOMAIN-SUFFIX,hembed.com
+  - DOMAIN-SUFFIX,hanime1.me
+  - DOMAIN-SUFFIX,sacdnssedge.com
+# YouTube 及 Google系域名
+  - IP-CIDR,172.110.32.0/21,no-resolve
+  - IP-CIDR,216.73.80.0/20,no-resolve
+  - DOMAIN-SUFFIX,yt.be
+  - DOMAIN-SUFFIX,youtu.be
+  - DOMAIN-SUFFIX,ggpht.cn
+  - DOMAIN-SUFFIX,ytimg.com
+  - DOMAIN-SUFFIX,gmail.com
+  - DOMAIN-SUFFIX,ggpht.com
+  - DOMAIN-SUFFIX,google.cn
+  - DOMAIN-SUFFIX,github.com
+  - DOMAIN-SUFFIX,yandex.com
+  - DOMAIN-SUFFIX,google.com
+  - DOMAIN-SUFFIX,youtube.com
+  - DOMAIN-SUFFIX,google.com.hk
+  - DOMAIN-SUFFIX,googleapis.cn
+  - DOMAIN-SUFFIX,googleapis.com
+  - DOMAIN-SUFFIX,doodles.google
+  - DOMAIN-SUFFIX,googlevideo.com
+  - DOMAIN-SUFFIX,githubassets.com
+  - DOMAIN-SUFFIX,xn--ngstr-lra8j.com
+  - DOMAIN-SUFFIX,googleadservices.com
+  - DOMAIN-SUFFIX,google-analytics.com
+  - DOMAIN-SUFFIX,googletagmanager.com
+  - DOMAIN-SUFFIX,githubusercontent.com
+  - DOMAIN-SUFFIX,googleusercontent.com
+# 视频网站
+  - DOMAIN-SUFFIX,x.com
+  - DOMAIN-SUFFIX,twttr.com
+  - DOMAIN-SUFFIX,twimg.com
+  - DOMAIN-SUFFIX,twitter.com
+  - DOMAIN-SUFFIX,iturrit.com
+  - DOMAIN-SUFFIX,nflxvideo.net
+# 外网常用网站
+  - DOMAIN-SUFFIX,linux.do
+  - DOMAIN-SUFFIX,proton.me
+  - DOMAIN-SUFFIX,serv00.com
+  - DOMAIN-SUFFIX,wikipedia.org
+  - DOMAIN-SUFFIX,ip.sb
+  - DOMAIN-SUFFIX,dpdns.org
+  - DOMAIN-SUFFIX,fast.com
+  - DOMAIN-SUFFIX,nperf.net
+  - DOMAIN-SUFFIX,nperf.com
+  - DOMAIN-SUFFIX,wallhaven.cc
+  - DOMAIN-SUFFIX,microsoft.com
+  - DOMAIN-SUFFIX,cloudflare.com
