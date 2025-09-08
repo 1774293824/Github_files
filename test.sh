@@ -5,10 +5,10 @@ export nb="s11"
 export HOSTNAME="s11.serv00.com"
 export hona="serv00"
 
-mkdir -p "~/domains/s11.a2409041774.serv00.net/public_nodejs"
+mkdir -p "${HOME}/domains/s11.a2409041774.serv00.net/public_nodejs"
 
-export WORKDIR="~/domains/a2409041774.serv00.net/logs"
-export FILE_PATH="~/domains/a2409041774.serv00.net/public_html"
+export WORKDIR="${HOME}/domains/a2409041774.serv00.net/logs"
+export FILE_PATH="${HOME}/domains/a2409041774.serv00.net/public_html"
 
 # 创建目录
 mkdir -p "$FILE_PATH" "$WORKDIR"
