@@ -1,21 +1,14 @@
 # 设置变量（根据实际修改）
-export USERNAME=$(whoami | tr '[:upper:]' '[:lower:]')
-export snb=$(hostname | cut -d. -f1)
-export nb=$(hostname | cut -d '.' -f 1 | tr -d 's')
-export HOSTNAME=$(hostname)
-export hona=$(hostname | cut -d. -f2)
+export USERNAME="a2409041774"
+export snb="s11"
+export nb="s11"
+export HOSTNAME="s11.serv00.com"
+export hona="serv00"
 
-# 设置工作目录
-if [ "$hona" = "serv00" ]; then
-  address="serv00.net"
-  keep_path="${HOME}/domains/${snb}.${USERNAME}.serv00.net/public_nodejs"
-  mkdir -p "$keep_path"
-else
-  address="useruno.com"
-fi
+mkdir -p "~/domains/s11.a2409041774.serv00.net/public_nodejs"
 
-export WORKDIR="${HOME}/domains/${USERNAME}.${address}/logs"
-export FILE_PATH="${HOME}/domains/${USERNAME}.${address}/public_html"
+export WORKDIR="~/domains/a2409041774.serv00.net/logs"
+export FILE_PATH="~/domains/a2409041774.serv00.net/public_html"
 
 # 创建目录
 mkdir -p "$FILE_PATH" "$WORKDIR"
