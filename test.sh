@@ -3,6 +3,7 @@
 # 快捷方式：sb
 
 set -euo pipefail
+
 # -------------------- 颜色函数 --------------------
 red(){ echo -e "\e[1;31m$1\033[0m"; }
 green(){ echo -e "\e[1;32m$1\033[0m"; }
@@ -27,14 +28,17 @@ command -v uuidgen >/dev/null || { yellow "安装 uuidgen ..."; devil binexec on
 # -------------------- 端口管理 --------------------
 check_port(){
   local tl=$(devil port list | grep -c tcp) tu=$(devil port list | grep -c udp)
+  tcp=() pu=0  # 初始化数组与UDP端口
   if [[ $tl -ne 2 || $tu -ne 1 ]]; then
     devil port list | grep -E '^[0-9]' | awk '{print $2,$1}' | while read t p; do
-      devil port del "$t" "$p" 2>/dev/null; done
+      devil port del "$t" "$p" 2>/dev/null
+    done
     for _ in {1..2}; do
       while :; do
         pt=$(shuf -i 10000-65000 -n1)
         devil port add tcp "$pt" 2>/dev/null | grep -q succ && { tcp+=($pt); break; }
-      done; done
+      done
+    done
     while :; do
       pu=$(shuf -i 10000-65000 -n1)
       devil port add udp "$pu" 2>/dev/null | grep -q succ && break
@@ -42,7 +46,8 @@ check_port(){
   else
     read -r tcp1 tcp2 <<<$(devil port list | awk '/tcp/{print $1}')
     pu=$(devil port list | awk '/udp/{print $1}')
-    tcp=($tcp1 $tcp2)
+    tcp=(${tcp1:-10001} ${tcp2:-10002})
+    pu=${pu:-10003}
   fi
   vless_port=${tcp[0]} vmess_port=${tcp[1]} hy2_port=$pu
   green "vless-reality端口：$vless_port  |  vmess-ws端口：$vmess_port  |  hysteria2端口：$hy2_port"
@@ -52,28 +57,30 @@ check_port(){
 read_ip(){
   rm -f ip.txt
   for h in "$HOSTNAME" "cache$snb.$hona.com" "web$snb.$hona.com"; do
-    dig @8.8.8.8 +short +time=2 "$h" | grep -E '^[0-9.]+$' >> ip.txt; done
+    dig @8.8.8.8 +short +time=2 "$h" | grep -E '^[0-9.]+$' >> ip.txt || true
+  done
   reading "请输入上面任意一个可用IP（直接回车自动选第一个）：" IP
-  [[ -z $IP ]] && IP=$(head -n1 ip.txt | awk '{print $1}')
+  [[ -z ${IP:-} ]] && IP=$(head -n1 ip.txt | awk '{print $1}')
+  IP=${IP:-127.0.0.1}
   echo "$IP" > "$WORKDIR/ip.txt"
 }
 read_uuid(){
   reading "输入统一UUID（回车随机）：" UUID
-  [[ -z $UUID ]] && UUID=$(uuidgen -r)
+  [[ -z ${UUID:-} ]] && UUID=$(uuidgen -r)
   echo "$UUID" > "$WORKDIR/uuid.txt"
 }
 read_reym(){
   reading "输入reality域名（回车默认 $USERNAME.$address）：" reym
-  [[ -z $reym ]] && reym=$USERNAME.$address
+  [[ -z ${reym:-} ]] && reym=$USERNAME.$address
   echo "$reym" > "$WORKDIR/reym.txt"
 }
 argo_configure(){
   reading "选argo模式：回车=临时隧道  g=固定隧道：" ac
-  if [[ $ac == [Gg] ]]; then
+  if [[ ${ac:-} == [Gg] ]]; then
     reading "输入argo固定域名：" ARGO_DOMAIN
     reading "输入argo token（ey开头）：" ARGO_AUTH
-    echo "$ARGO_DOMAIN" > "$WORKDIR/argo_domain.txt"
-    echo "$ARGO_AUTH"   > "$WORKDIR/argo_auth.txt"
+    echo "${ARGO_DOMAIN:-}" > "$WORKDIR/argo_domain.txt"
+    echo "${ARGO_AUTH:-}"   > "$WORKDIR/argo_auth.txt"
   else
     rm -f "$WORKDIR"/argo_*.txt
   fi
@@ -119,7 +126,7 @@ run_argo(){
   if [[ -f argo_auth.txt ]]; then
     args="tunnel --no-autoupdate run --token $(cat argo_auth.txt)"
   else
-    args="tunnel --url http://localhost:$vmess_port --no-autoupdate --logfile boot.log --loglevel info"
+    args="tunnel --url http://localhost:${vmess_port:-10002} --no-autoupdate --logfile boot.log --loglevel info"
   fi
   curl -sL -o argo https://github.com/yonggekkk/Cloudflare_vless_trojan/releases/download/serv00/server
   chmod +x argo
@@ -136,13 +143,13 @@ show_links(){
   cat <<EOF
 =================== 节点链接 ===================
 vless-reality：
-vless://$UUID@$IP:$vless_port?encryption=none&flow=xtls-rprx-vision&security=reality&sni=$reym&fp=chrome&pbk=$public_key&type=tcp#$snb-vl-$USERNAME
+vless://$UUID@${IP:-127.0.0.1}:$vless_port?encryption=none&flow=xtls-rprx-vision&security=reality&sni=$reym&fp=chrome&pbk=$public_key&type=tcp#$snb-vl-$USERNAME
 
 vmess-ws：
-vmess://$(echo "{ \"v\": \"2\", \"ps\": \"$snb-vm-$USERNAME\", \"add\": \"$IP\", \"port\": \"$vmess_port\", \"id\": \"$UUID\", \"aid\": \"0\", \"scy\": \"auto\", \"net\": \"ws\", \"path\": \"/$UUID-vm\" }" | base64 -w0)
+vmess://$(echo "{ \"v\": \"2\", \"ps\": \"$snb-vm-$USERNAME\", \"add\": \"${IP:-127.0.0.1}\", \"port\": \"$vmess_port\", \"id\": \"$UUID\", \"aid\": \"0\", \"scy\": \"auto\", \"net\": \"ws\", \"path\": \"/$UUID-vm\" }" | base64 -w0)
 
 hysteria2：
-hysteria2://$UUID@$IP:$hy2_port?security=tls&sni=www.bing.com&alpn=h3&insecure=1#$snb-hy2-$USERNAME
+hysteria2://$UUID@${IP:-127.0.0.1}:$hy2_port?security=tls&sni=www.bing.com&alpn=h3&insecure=1#$snb-hy2-$USERNAME
 
 Argo 域名：${argodomain:-未启用}
 订阅地址：https://${USERNAME}.${address}/${UUID}_sub.txt
@@ -157,11 +164,10 @@ install(){
   read_ip; read_uuid; read_reym; check_port; argo_configure
   download_core; build_config
   run_core; run_argo
-  # 生成订阅文件
   cat > jh.txt <<EOF
-vless://$UUID@$IP:$vless_port?encryption=none&flow=xtls-rprx-vision&security=reality&sni=$reym&fp=chrome&pbk=$public_key&type=tcp#$snb-vl-$USERNAME
-vmess://$(echo "{ \"v\": \"2\", \"ps\": \"$snb-vm-$USERNAME\", \"add\": \"$IP\", \"port\": \"$vmess_port\", \"id\": \"$UUID\", \"aid\": \"0\", \"scy\": \"auto\", \"net\": \"ws\", \"path\": \"/$UUID-vm\" }" | base64 -w0)
-hysteria2://$UUID@$IP:$hy2_port?security=tls&sni=www.bing.com&alpn=h3&insecure=1#$snb-hy2-$USERNAME
+vless://$UUID@${IP:-127.0.0.1}:$vless_port?encryption=none&flow=xtls-rprx-vision&security=reality&sni=$reym&fp=chrome&pbk=$public_key&type=tcp#$snb-vl-$USERNAME
+vmess://$(echo "{ \"v\": \"2\", \"ps\": \"$snb-vm-$USERNAME\", \"add\": \"${IP:-127.0.0.1}\", \"port\": \"$vmess_port\", \"id\": \"$UUID\", \"aid\": \"0\", \"scy\": \"auto\", \"net\": \"ws\", \"path\": \"/$UUID-vm\" }" | base64 -w0)
+hysteria2://$UUID@${IP:-127.0.0.1}:$hy2_port?security=tls&sni=www.bing.com&alpn=h3&insecure=1#$snb-hy2-$USERNAME
 EOF
   base64 -w0 jh.txt > ${FILE_PATH}/${UUID}_sub.txt
   green "安装完成！菜单输入 6 查看节点"
@@ -170,7 +176,7 @@ EOF
 # -------------------- 卸载 --------------------
 uninstall(){
   reading "确认卸载？[y/n]：" c
-  [[ $c != [Yy] ]] && return
+  [[ ${c:-} != [Yy] ]] && return
   pkill -x sb argo 2>/dev/null || true
   devil www list | awk 'NR>1{print $1}' | xargs -r -I{} devil www del {} 2>/dev/null || true
   rm -rf "$WORKDIR" ~/bin/sb 2>/dev/null
@@ -188,7 +194,6 @@ restart(){
 change_port(){
   cd "$WORKDIR"
   check_port
-  # 直接替换端口
   jq --arg vp "$vless_port" --arg mp "$vmess_port" --arg hp "$hy2_port" \
     '.inbounds[0].listen_port=($hp|tonumber) | .inbounds[1].listen_port=($vp|tonumber) | .inbounds[2].listen_port=($mp|tonumber)' \
     config.json > tmp.json && mv tmp.json config.json
@@ -216,7 +221,7 @@ menu(){
   echo "0) 退出"
   echo "=============================================="
   reading "请选择：" choice
-  case $choice in
+  case ${choice:-} in
     1) install ;;
     2) uninstall ;;
     3) restart ;;
@@ -228,5 +233,4 @@ menu(){
   esac
 }
 
-# 如果直接运行脚本则进菜单
 [[ "${BASH_SOURCE[0]}" == "${0}" ]] && menu
