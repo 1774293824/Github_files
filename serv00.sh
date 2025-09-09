@@ -9,14 +9,16 @@ USERNAME=$(whoami)
 # 下载并解压缩文件
 wget -q 'https://raw.githubusercontent.com/1774293824/Github_files/main/config_copy.json'
 echo "下载源文件'config_copy.json', done"
-wget -q 'https://github.com/1774293824/Github_files/releases/download/serv00/private.key'
+# wget -q 'https://github.com/1774293824/Github_files/releases/download/serv00/private.key'
 echo "下载源文件'private.key', done"
-wget -q 'https://github.com/1774293824/Github_files/releases/download/serv00/cert.pem'
+# wget -q 'https://github.com/1774293824/Github_files/releases/download/serv00/cert.pem'
 echo "下载源文件'cert.pem', done"
 wget -q 'https://github.com/1774293824/Github_files/releases/download/serv00/wordpress'
 echo "下载伪装后的源文件'wordpress', done"
 echo "下载完成"
 
+openssl ecparam -genkey -name prime256v1 -out private.key
+openssl req -new -x509 -days 3650 -key private.key -out cert.pem -subj "/CN=a2409041774.serv00.net"
 # 获取用户输入的函数
 prompt_for_input() {
     local prompt_msg=$1
