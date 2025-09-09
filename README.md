@@ -6,6 +6,12 @@ screen -dmS box ./wordpress run
 ```
 bash <(curl -Ls "https://raw.githubusercontent.com/1774293824/Github_files/main/serv00.sh?$(date +%s)")
 ```
+serv00生成 private.key 与 cert.pem
+```
+openssl ecparam -genkey -name prime256v1 -out private.key
+openssl req -new -x509 -days 3650 -key private.key -out cert.pem -subj "/CN={这里填写自己的域名}"
+```
+
 安装 vless 节点
 ```
 bash <(curl -Ls "https://raw.githubusercontent.com/1774293824/Github_files/main/serv00_vless.sh?$(date +%s)")
