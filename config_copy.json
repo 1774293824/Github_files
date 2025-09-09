@@ -49,7 +49,7 @@
                     "password": "a03e977f-6491-42a2-b56d-abbab6c3a9ac"
                 }
             ],
-            "masquerade": "https://bing.com",
+            "masquerade": "https://www.bing.com",
             "tls": {
                 "enabled": true,
                 "alpn": [
@@ -69,7 +69,7 @@
                     "password": "a03e977f-6491-42a2-b56d-abbab6c3a9ac"
                 }
             ],
-            "masquerade": "https://bing.com",
+            "masquerade": "https://www.bing.com",
             "tls": {
                 "enabled": true,
                 "alpn": [
@@ -173,3 +173,4 @@
         }
     }
 }
+
