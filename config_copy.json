@@ -4,40 +4,6 @@
         "level": "info",
         "timestamp": true
     },
-    "dns": {
-        "servers": [
-            {
-                "tag": "google",
-                "address": "tls://8.8.8.8",
-                "strategy": "ipv4_only",
-                "detour": "direct"
-            }
-        ],
-        "rules": [
-            {
-                "rule_set": [
-                    "geosite-openai"
-                ],
-                "server": "wireguard"
-            },
-            {
-                "rule_set": [
-                    "geosite-netflix"
-                ],
-                "server": "wireguard"
-            },
-            {
-                "rule_set": [
-                    "geosite-category-ads-all"
-                ],
-                "server": "block"
-            }
-        ],
-        "final": "google",
-        "strategy": "",
-        "disable_cache": false,
-        "disable_expire": false
-    },
     "inbounds": [
         {
             "tag": "hysteria-in-1",
@@ -82,18 +48,6 @@
     ],
     "outbounds": [
         {
-            "type": "direct",
-            "tag": "direct"
-        },
-        {
-            "type": "block",
-            "tag": "block"
-        },
-        {
-            "type": "dns",
-            "tag": "dns-out"
-        },
-        {
             "type": "wireguard",
             "tag": "wireguard-out",
             "server": "162.159.195.100",
@@ -109,68 +63,22 @@
                 21,
                 228
             ]
+        },
+        {
+            "type": "direct",
+            "tag": "direct"
         }
     ],
     "route": {
-        "rules": [
-            {
-                "protocol": "dns",
-                "outbound": "dns-out"
-            },
-            {
-                "ip_is_private": true,
-                "outbound": "direct"
-            },
-            {
-                "rule_set": [
-                    "geosite-openai"
-                ],
-                "outbound": "wireguard-out"
-            },
-            {
-                "rule_set": [
-                    "geosite-netflix"
-                ],
-                "outbound": "wireguard-out"
-            },
-            {
-                "rule_set": [
-                    "geosite-category-ads-all"
-                ],
-                "outbound": "block"
-            }
-        ],
         "rule_set": [
             {
-                "tag": "geosite-netflix",
+                "tag": "google-gemini",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-netflix.srs",
-                "download_detour": "direct"
-            },
-            {
-                "tag": "geosite-openai",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/openai.srs",
-                "download_detour": "direct"
-            },
-            {
-                "tag": "geosite-category-ads-all",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-ads-all.srs",
+                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google-gemini.srs",
                 "download_detour": "direct"
             }
         ],
         "final": "direct"
-    },
-    "experimental": {
-        "cache_file": {
-            "path": "cache.db",
-            "cache_id": "mycacheid",
-            "store_fakeip": true
-        }
     }
 }
-
