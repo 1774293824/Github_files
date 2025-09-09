@@ -27,10 +27,11 @@ prompt_for_input() {
     echo "${input:-$default_value}"
 }
 UUID=$(prompt_for_input "输入UUID:" "ccc33d85-681b-41f7-b9db-079ed095d2df")
-PORT1=$(prompt_for_input "输入配置的第一个udp端口号: " "33333")
 IP_1=$(prompt_for_input "请输入第 1 个IP地址(回车默认配置0.0.0.0): " "0.0.0.0")
-PORT2=$(prompt_for_input "输入配置的第二个udp端口号: " "44444")
+PORT1=$(prompt_for_input "输入配置的第一个udp端口号: " "33333")
 IP_2=$(prompt_for_input "请输入第 2 个IP地址: " "{{IP_2}}")
+PORT2=$(prompt_for_input "输入配置的第二个udp端口号: " "44444")
+
 
 # 配置文件备份路径
 BACKUP_CONFIG_FILE="config_copy.json"
