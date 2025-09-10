@@ -1,10 +1,7 @@
 #!/bin/sh
 set -e
 export UUID=${UUID:-'ccc33d85-681b-41f7-b9db-079ed095d2df'}
-USERNAME=$(whoami)
-
-# WORK_DIR="./sbox"
-# mkdir -p "$WORK_DIR" && cd "$WORK_DIR"
+export USERNAME=$(whoami | tr '[:upper:]' '[:lower:]')
 
 # 下载并解压缩文件
 wget -q 'https://raw.githubusercontent.com/1774293824/Github_files/main/config_copy.json'
@@ -18,7 +15,8 @@ echo "下载伪装后的源文件'wordpress', done"
 echo "下载完成"
 
 openssl ecparam -genkey -name prime256v1 -out private.key
-openssl req -new -x509 -days 3650 -key private.key -out cert.pem -subj "/CN=a2409041774.serv00.net"
+openssl req -new -x509 -days 3650 -key private.key -out cert.pem -subj "/CN=${USERNAME}.serv00.net"
+
 # 获取用户输入的函数
 prompt_for_input() {
     local prompt_msg=$1
@@ -31,7 +29,6 @@ IP_1=$(prompt_for_input "请输入第 1 个IP地址(回车默认配置0.0.0.0): 
 PORT1=$(prompt_for_input "输入配置的第一个udp端口号: " "33333")
 IP_2=$(prompt_for_input "请输入第 2 个IP地址: " "{{IP_2}}")
 PORT2=$(prompt_for_input "输入配置的第二个udp端口号: " "44444")
-
 
 # 配置文件备份路径
 BACKUP_CONFIG_FILE="config_copy.json"
