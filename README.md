@@ -2,20 +2,16 @@
 ```
 screen -dmS box ./wordpress run
 ```
-# serv00一键安装运行sing-box
+## serv00一键安装运行sing-box
 ```
 bash <(curl -Ls "https://raw.githubusercontent.com/1774293824/Github_files/main/serv00.sh?$(date +%s)")
 ```
-serv00生成 private.key 与 cert.pem
+### serv00生成 private.key 与 cert.pem
 ```
 openssl ecparam -genkey -name prime256v1 -out private.key
 openssl req -new -x509 -days 3650 -key private.key -out cert.pem -subj "/CN={这里填写自己的域名}"
 ```
 
-安装 vless 节点
-```
-bash <(curl -Ls "https://raw.githubusercontent.com/1774293824/Github_files/main/serv00_vless.sh?$(date +%s)")
-```
 # 老王项目：下载singbox
 下载说明：在release中下载 wordpress 文件，再配合cert.pem文件和private.key文件，即可实现运行sing-box
 下载地址
