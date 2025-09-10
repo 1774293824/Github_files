@@ -1,5 +1,4 @@
 # Serv00 一键安装 & 运行 Sing-Box
-本文档介绍如何在 **Serv00** 上快速部署并运行 **Sing-Box**。
 ---
 ## 🚀 一键安装 Sing-Box
 运行以下命令即可一键安装：
@@ -18,30 +17,20 @@ openssl ecparam -genkey -name prime256v1 -out private.key
 openssl req -new -x509 -days 3650 -key private.key -out cert.pem -subj "/CN={your_domain}"
 ```
 ---
-
 ## 📦 下载 Sing-Box 程序
-从 **Release 页面** 下载 `wordpress` 文件（实际上是 `sing-box` 的可执行文件）：
+从 **Release 页面** 下载freebsd系统可用的`sing-box`文件（文件名称为`sb`）：
 👉 [下载地址](https://github.com/eooce/test/releases/tag/freebsd)
-下载后请将其重命名为 `wordpress` 并赋予可执行权限：
-```bash
-chmod +x wordpress
-```
+下载后请将其重命名为 `wordpress` 并确保已赋予可执行权限.
+
 ---
 ## ▶️ 启动 Sing-Box
 使用 `screen` 在后台运行 Sing-Box：
 ```bash
 screen -dmS box ./wordpress run
 ```
-说明：
-* `screen -dmS box` → 在后台新建一个名为 **box** 的会话
-* `./wordpress run` → 启动 sing-box
-如果需要进入 screen 会话：
-```bash
-screen -r box
-```
 如果需要退出后台运行：
 ```bash
-screen -S box -X quit
+pkill -kill -u $(whoami)
 ```
 # 延迟测试链接
 
