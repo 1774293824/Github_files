@@ -9,7 +9,8 @@
         "masquerade": "https://www.bing.com",
         "tls": {"enabled": true,"alpn": ["h3"],
         "certificate_path": "cert.pem",
-        "key_path": "private.key"}},
+        "key_path": "private.key"}
+    },
         {"tag": "hysteria-in-2",
         "type": "hysteria2",
         "listen": "{{IP_2}}",
@@ -18,8 +19,8 @@
         "masquerade": "https://www.bing.com",
         "tls": {"enabled": true,"alpn": ["h3"],
         "certificate_path": "cert.pem",
-        "key_path": "private.key"}}
-    ],
+        "key_path": "private.key"}
+    }],
     "outbounds": [{"type": "direct","tag": "direct"}],
-    "route": {"rules": [{"tag": "direct","type": "direct"}],"final": "direct"}
+    "route": {"final": "direct"}
 }
