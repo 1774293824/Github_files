@@ -26,13 +26,13 @@ prompt_for_input() {
 }
 
 while true; do
-    cluster=$(prompt_for_input "请输入服务器所属 (11/12/13/14): " "")
+    cluster=$(prompt_for_input "请输入服务器所属 (11/12/13/14):" "")
     case "$cluster" in
         11) DEFAULT_IP="128.204.223.117"; break;;
         12) DEFAULT_IP="85.194.246.69"; break;;
         13) DEFAULT_IP="128.204.223.42"; break;;
         14) DEFAULT_IP="188.68.240.160"; break;;
-        *) echo "❌ 输入无效，请输入 11 / 12 / 13 / 14";;
+        *) echo "输入无效，请输入 11/12/13/14 中的某一个:";;
     esac
 done
 
