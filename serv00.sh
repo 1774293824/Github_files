@@ -25,10 +25,18 @@ prompt_for_input() {
     echo "${input:-$default_value}"
 }
 UUID=$(prompt_for_input "输入UUID:" "ccc33d85-681b-41f7-b9db-079ed095d2df")
-IP_1=$(prompt_for_input "请输入第 1 个IP地址(回车默认配置0.0.0.0): " "0.0.0.0")
-PORT1=$(prompt_for_input "输入配置的第一个udp端口号: " "33333")
-IP_2=$(prompt_for_input "请输入第 2 个IP地址: " "{{IP_2}}")
-PORT2=$(prompt_for_input "输入配置的第二个udp端口号: " "44444")
+PORT1=$(prompt_for_input "输入配置的第一个udp端口号,回车默认33333" "33333")
+PORT2=$(prompt_for_input "输入配置的第二个udp端口号,回车默认44444" "44444")
+while true; do
+    cluster=$(prompt_for_input "请输入服务器所属 (11/12/13/14): " "")
+    case "$cluster" in
+        11) DEFAULT_IP="128.204.223.117"; break;;
+        12) DEFAULT_IP="85.194.246.69"; break;;
+        13) DEFAULT_IP="128.204.223.42"; break;;
+        14) DEFAULT_IP="188.68.240.160"; break;;
+        *) echo "❌ 输入无效，请输入 11 / 12 / 13 / 14";;
+    esac
+done
 
 # 配置文件备份路径
 BACKUP_CONFIG_FILE="config_copy.json"
@@ -44,11 +52,10 @@ fi
 if [ -f "$BACKUP_CONFIG_FILE" ]; then
     echo "复制 $BACKUP_CONFIG_FILE 为 $NEW_CONFIG_FILE..."
     cp "$BACKUP_CONFIG_FILE" "$NEW_CONFIG_FILE"
-
     echo "替换配置文件中的占位符..."
     sed -i '' "s/a03e977f-6491-42a2-b56d-abbab6c3a9ac/$UUID/g" "$NEW_CONFIG_FILE"
-    sed -i '' "s/{{IP_1}}/$IP_1/g; s/33333/$PORT1/g" "$NEW_CONFIG_FILE"
-    sed -i '' "s/{{IP_2}}/$IP_2/g; s/44444/$PORT2/g" "$NEW_CONFIG_FILE"
+    sed -i '' "s/33333/$PORT1/g" "$NEW_CONFIG_FILE"
+    sed -i '' "s/{{IP_2}}/$DEFAULT_IP/g; s/44444/$PORT2/g" "$NEW_CONFIG_FILE"
 else
     echo "配置文件 $BACKUP_CONFIG_FILE 不存在！"
     exit 1
