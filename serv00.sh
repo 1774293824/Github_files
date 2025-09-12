@@ -24,9 +24,7 @@ prompt_for_input() {
     read -p "$(echo -e '\033[0;32m'"$prompt_msg"' \033[0m')" input
     echo "${input:-$default_value}"
 }
-UUID=$(prompt_for_input "输入UUID:" "ccc33d85-681b-41f7-b9db-079ed095d2df")
-PORT1=$(prompt_for_input "输入配置的第一个udp端口号,回车默认33333" "33333")
-PORT2=$(prompt_for_input "输入配置的第二个udp端口号,回车默认44444" "44444")
+
 while true; do
     cluster=$(prompt_for_input "请输入服务器所属 (11/12/13/14): " "")
     case "$cluster" in
@@ -37,6 +35,10 @@ while true; do
         *) echo "❌ 输入无效，请输入 11 / 12 / 13 / 14";;
     esac
 done
+
+UUID=$(prompt_for_input "输入UUID:" "ccc33d85-681b-41f7-b9db-079ed095d2df")
+PORT1=$(prompt_for_input "输入配置的第一个udp端口号,回车默认31205:" "31205")
+PORT2=$(prompt_for_input "输入配置的第二个udp端口号,回车默认12117:" "12117")
 
 # 配置文件备份路径
 BACKUP_CONFIG_FILE="config_copy.json"
