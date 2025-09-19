@@ -22,7 +22,8 @@
         "key_path": "private.key"}
     }],
     "outbounds": [{"type": "direct","tag": "direct"}],
-    "route": {"rules": [{"tag": "direct","type": "direct"}],"final": "direct"}
+    "route": {"final": "direct"}
 }
+
 
 
