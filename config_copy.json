@@ -1,29 +1,39 @@
 {
     "log": {"disabled": true,"level": "info","timestamp": true},
     "inbounds": [
-        {"tag": "hysteria-in-1",
+    {   "tag": "hysteria-in-1",
         "type": "hysteria2",
         "listen": "0.0.0.0",
-        "listen_port": 33333,
+        "listen_port": 10001,
         "users": [{"password": "a03e977f-6491-42a2-b56d-abbab6c3a9ac"}],
         "masquerade": "https://www.bing.com",
         "tls": {"enabled": true,"alpn": ["h3"],
         "certificate_path": "cert.pem",
         "key_path": "private.key"}
     },
-        {"tag": "hysteria-in-2",
+    {   "tag": "hysteria-in-2",
         "type": "hysteria2",
         "listen": "{{IP_2}}",
-        "listen_port": 44444,
+        "listen_port": 10002,
         "users": [{"password": "a03e977f-6491-42a2-b56d-abbab6c3a9ac"}],
         "masquerade": "https://www.bing.com",
         "tls": {"enabled": true,"alpn": ["h3"],
         "certificate_path": "cert.pem",
         "key_path": "private.key"}
-    }],
+    },
+    {   "tag": "vless-reality-vesion",
+        "type": "vless",
+        "listen": "{{IP_2}}",
+        "listen_port": 10003,
+        "users": [{"uuid": "a03e977f-6491-42a2-b56d-abbab6c3a9ac",
+        "flow": "xtls-rprx-vision"}],
+        "tls": {"enabled": true,"server_name": "www.bing.com",
+        "reality": {"enabled": true,"handshake": {
+        "server": "www.bing.com","server_port": 443},
+        "private_key": "sFfFeg0jT8e0lWShEserKYernuR66yldmpV1EMPbHkA",
+        "short_id": [""]}}
+    }
+],
     "outbounds": [{"type": "direct","tag": "direct"}],
     "route": {"final": "direct"}
 }
-
-
-
