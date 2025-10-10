@@ -39,6 +39,7 @@ done
 UUID=$(prompt_for_input "输入UUID:" "ccc33d85-681b-41f7-b9db-079ed095d2df")
 PORT1=$(prompt_for_input "输入配置的第一个udp端口号,回车默认31205:" "31205")
 PORT2=$(prompt_for_input "输入配置的第二个udp端口号,回车默认12117:" "12117")
+PORT3=$(prompt_for_input "输入配置的tcp端口号,回车默认12118:" "12118")
 
 # 配置文件备份路径
 BACKUP_CONFIG_FILE="config_copy.json"
@@ -56,8 +57,9 @@ if [ -f "$BACKUP_CONFIG_FILE" ]; then
     cp "$BACKUP_CONFIG_FILE" "$NEW_CONFIG_FILE"
     echo "替换配置文件中的占位符..."
     sed -i '' "s/a03e977f-6491-42a2-b56d-abbab6c3a9ac/$UUID/g" "$NEW_CONFIG_FILE"
-    sed -i '' "s/33333/$PORT1/g" "$NEW_CONFIG_FILE"
+    sed -i '' "s/10001/$PORT1/g" "$NEW_CONFIG_FILE"
     sed -i '' "s/{{IP_2}}/$DEFAULT_IP/g; s/44444/$PORT2/g" "$NEW_CONFIG_FILE"
+    sed -i '' "s/10003/$PORT3/g" "$NEW_CONFIG_FILE"
 else
     echo "配置文件 $BACKUP_CONFIG_FILE 不存在！"
     exit 1
