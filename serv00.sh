@@ -58,7 +58,7 @@ if [ -f "$BACKUP_CONFIG_FILE" ]; then
     echo "替换配置文件中的占位符..."
     sed -i '' "s/a03e977f-6491-42a2-b56d-abbab6c3a9ac/$UUID/g" "$NEW_CONFIG_FILE"
     sed -i '' "s/10001/$PORT1/g" "$NEW_CONFIG_FILE"
-    sed -i '' "s/{{IP_2}}/$DEFAULT_IP/g; s/44444/$PORT2/g" "$NEW_CONFIG_FILE"
+    sed -i '' "s/{{IP_2}}/$DEFAULT_IP/g; s/10002/$PORT2/g" "$NEW_CONFIG_FILE"
     sed -i '' "s/10003/$PORT3/g" "$NEW_CONFIG_FILE"
 else
     echo "配置文件 $BACKUP_CONFIG_FILE 不存在！"
