@@ -16,6 +16,10 @@ jobs:
       with:
         python-version: "3.12"
 
+    - name: 安装 python 依赖库
+      run: |
+          pip install requests
+
     - name: 运行 获取ikuuu配置的python脚本
       run: |
         python ./rules/downloads.py
